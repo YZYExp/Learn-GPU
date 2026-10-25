@@ -34,7 +34,8 @@ jobs:
           cache: pip
           cache-dependency-path: site/requirements.txt
       - name: Install only website dependencies
-        run: python -m pip install --only-binary=:all: -r site/requirements.txt
+        run: |
+          python -m pip install --only-binary=:all: -r site/requirements.txt
       - name: Build and validate reading site
         run: python scripts/build_site.py --base-path "/${GITHUB_REPOSITORY#*/}/" --epub downloads/GPU-Modern-Computing.epub
       - name: Check browser script syntax
