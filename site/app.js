@@ -18,7 +18,7 @@
       if (!index) { const response = await fetch(base + 'search.json'); if (!response.ok) throw new Error('fetch'); index = await response.json(); }
       if (input.value.trim().toLocaleLowerCase() !== query) return;
       const matches = index.filter(item => (item.title + ' ' + item.text).toLocaleLowerCase().includes(query));
-      status.textContent = `找到 ${matches.length} 个章节`;
+      status.textContent = `找到 ${matches.length} 个章节` + (matches.length > 25 ? '（显示前25个）' : '');
       matches.slice(0, 25).forEach(item => {
         const anchor = document.createElement('a'); anchor.className = 'search-hit'; anchor.href = base + item.url;
         const title = document.createElement('b'); title.textContent = item.title;
