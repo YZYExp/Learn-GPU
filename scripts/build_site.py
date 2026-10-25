@@ -2,6 +2,7 @@
 """Build the reading website with only Markdown, Pillow and latex2mathml."""
 import argparse
 import html
+import hashlib
 import json
 import os
 import posixpath
@@ -39,6 +40,8 @@ def run():
     if len(slugs)!=len(set(slugs)): raise ValueError('duplicate slug')
     assets={}
     def url(path=''): return base+path.lstrip('/')
+    style_url=url('assets/style.css')+'?v='+hashlib.sha256((ROOT/'site/style.css').read_bytes()).hexdigest()[:12]
+    script_url=url('assets/app.js')+'?v='+hashlib.sha256((ROOT/'site/app.js').read_bytes()).hexdigest()[:12]
     def asset(ref,source):
         p=(source.parent/ref).resolve()
         if not p.is_file() or ROOT not in p.parents: raise ValueError('invalid image '+ref)
@@ -81,7 +84,7 @@ def run():
 
     dialog='''<dialog id="search-dialog" aria-label="搜索全书"><div class="search-head"><input id="search-input" type="search" aria-label="搜索词" placeholder="搜索算子、显存、FSDP、低精度…" autocomplete="off"/><button id="search-close" aria-label="关闭搜索">×</button></div><p id="search-status" class="search-status">输入至少两个字或字母，搜索全书正文。</p><div id="search-results" class="search-results"></div></dialog>'''
     def page(title,content,description='从硬件、训练到算子优化，一部现代 AI 计算的中文图解知识书。'):
-        return f'''<!doctype html><html lang="zh-CN" data-base="{base}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{html.escape(description,quote=True)}"><meta name="theme-color" content="#fbf8f2"><title>{html.escape(title)} · GPU 与现代 AI 计算</title><link rel="stylesheet" href="{url('assets/style.css')}"><script defer src="{url('assets/app.js')}"></script></head><body><a class="skip" href="#main">跳到正文</a><header class="topbar"><nav class="top-inner" aria-label="主导航"><a class="brand" href="{url()}"><span>GPU</span>现代 AI 计算</a><a href="{url('#contents')}">全书目录</a><a class="repo-link" href="{REPO}">GitHub</a><button class="search-button" data-open-search>搜索全书</button></nav></header>{content}{dialog}<footer class="footer">GPU 与现代 AI 计算 · 2026年10月版　/　<a href="{REPO}">书稿与实验代码</a>　/　资料核验至 2026-10-25</footer></body></html>'''
+        return f'''<!doctype html><html lang="zh-CN" data-base="{base}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{html.escape(description,quote=True)}"><meta name="theme-color" content="#fbf8f2"><title>{html.escape(title)} · GPU 与现代 AI 计算</title><link rel="stylesheet" href="{style_url}"><script defer src="{script_url}"></script></head><body><a class="skip" href="#main">跳到正文</a><header class="topbar"><nav class="top-inner" aria-label="主导航"><a class="brand" href="{url()}"><span>GPU</span>现代 AI 计算</a><a href="{url('#contents')}">全书目录</a><a class="repo-link" href="{REPO}">GitHub</a><button class="search-button" data-open-search>搜索全书</button></nav></header>{content}{dialog}<footer class="footer">GPU 与现代 AI 计算 · 2026年10月版　/　<a href="{REPO}">书稿与实验代码</a>　/　资料核验至 2026-10-25</footer></body></html>'''
 
     search=[]
     for at,d in enumerate(docs):
