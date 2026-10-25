@@ -1,0 +1,290 @@
+[
+  {
+    "id": "1-1",
+    "chapter": "ch01",
+    "source": "chapters/01-training-step.md",
+    "file": "assets/images/training-cycle.png",
+    "type": "AI 教学示意",
+    "caption": "图 1-1｜AI 教学示意。一次更新包含读取批次、前向与损失、反向求梯度和参数更新。图中的矩阵与机制是概念场景；它没有画出所有临时状态和通信。"
+  },
+  {
+    "id": "2-1",
+    "chapter": "ch02",
+    "source": "chapters/02-tensor-layout.md",
+    "file": "assets/images/fig-02.png",
+    "type": "原创精确图解",
+    "caption": "图 2-1｜原创精确图解。同一段存储可以用不同形状和步长读取。上方原视图与转置视图共享下方六个元素，转置没有移动这些数。"
+  },
+  {
+    "id": "3-1",
+    "chapter": "ch03",
+    "source": "chapters/03-autograd-optimizer.md",
+    "file": "assets/images/fig-03.png",
+    "type": "原创精确图解",
+    "caption": "图 3-1｜原创精确图解。局部导数组合成参数梯度：z=xw、L=z²、x=2、w=3时，∂L/∂w=12×2=24。反向传播沿已发生的计算关系组织这些乘积。"
+  },
+  {
+    "id": "4-1",
+    "chapter": "ch04",
+    "source": "chapters/04-execution-stack.md",
+    "file": "assets/images/compiler-stack.png",
+    "type": "AI 教学示意",
+    "caption": "图 4-1｜AI 教学示意。模型代码经过图表示与编译优化，可以生成设备内核，也可以调用已有算子库。这是主路径示意；实际程序还可能有图断裂、CPU执行与多种后端。"
+  },
+  {
+    "id": "5-1",
+    "chapter": "ch05",
+    "source": "chapters/05-gpu-evolution.md",
+    "file": "assets/images/fig-05.png",
+    "type": "原创精确图解",
+    "caption": "图 5-1｜原创精确图解。GPU的发展扩大了可表达的计算范围。各阶段不是互相替代的严格年代边界，传统图形工作与现代矩阵计算仍然并存。"
+  },
+  {
+    "id": "6-1",
+    "chapter": "ch06",
+    "source": "chapters/06-execution-model.md",
+    "file": "assets/images/fig-06.png",
+    "type": "原创精确图解",
+    "caption": "图 6-1｜原创精确图解。1000个元素按每块256个线程分配，需要四块。最后一块只有232个有效线程；图中每块只显示前8个局部编号，完整范围由文字说明。"
+  },
+  {
+    "id": "7-1",
+    "chapter": "ch07",
+    "source": "chapters/07-memory-hierarchy.md",
+    "file": "assets/images/memory-hierarchy.png",
+    "type": "AI 教学示意",
+    "caption": "图 7-1｜AI 教学示意。寄存器与共享内存在计算单元附近，二级缓存位于芯片范围，高带宽显存在封装上。区域、面积和层数仅作概念示意，不是某型号实物剖面。"
+  },
+  {
+    "id": "8-1",
+    "chapter": "ch08",
+    "source": "chapters/08-matrix-units.md",
+    "file": "assets/images/fig-08.png",
+    "type": "原创精确图解",
+    "caption": "图 8-1｜原创精确图解。等宽的16位格式可以有不同指数和尾数分配。图中尾数指显式尾数字段，隐含有效位和特殊数值规则还需结合具体格式理解。"
+  },
+  {
+    "id": "9-1",
+    "chapter": "ch09",
+    "source": "chapters/09-system-interconnect.md",
+    "file": "assets/images/fig-09.png",
+    "type": "原创精确图解",
+    "caption": "图 9-1｜原创精确图解。主机内存、GPU显存和网卡形成不同的数据路径。图中PCIe交换芯片与CPU插槽等实现细节被简化，跨GPU直接访问也需要系统支持。"
+  },
+  {
+    "id": "10-1",
+    "chapter": "ch10",
+    "source": "chapters/10-reproducible-environment.md",
+    "file": "assets/images/fig-10.png",
+    "type": "原创精确图解",
+    "caption": "图 10-1｜原创精确图解。从硬件和驱动向上逐层核对运行时、框架与训练代码。某一层能安装，不代表全部目标算子和通信路径已经匹配。"
+  },
+  {
+    "id": "11-1",
+    "chapter": "ch11",
+    "source": "chapters/11-input-pipeline.md",
+    "file": "assets/images/input-pipeline.png",
+    "type": "AI 教学示意",
+    "caption": "图 11-1｜AI 教学示意。批次从读取、预处理、传输走向GPU计算。箭头表示数据依赖；流水重叠发生在不同批次之间，不保证四阶段时长相等。"
+  },
+  {
+    "id": "12-1",
+    "chapter": "ch12",
+    "source": "chapters/12-memory-budget.md",
+    "file": "assets/images/fig-12.png",
+    "type": "原创精确图解",
+    "caption": "图 12-1｜原创精确图解。这是10亿参数的教学假设：BF16参数/梯度，两个FP32 Adam状态和FP32主参数副本，常驻共16 GB约14.9 GiB。激活与缓冲尚未计入；实现可能没有主副本。"
+  },
+  {
+    "id": "13-1",
+    "chapter": "ch13",
+    "source": "chapters/13-low-precision.md",
+    "file": "assets/images/precision.png",
+    "type": "AI 教学示意",
+    "caption": "图 13-1｜AI 教学示意。低精度包括缩放、量化、乘法和累加，也需要误差与收敛验证。图中的尺度和轨迹是概念表达，没有指定某种FP4编码或训练成绩。"
+  },
+  {
+    "id": "14-1",
+    "chapter": "ch14",
+    "source": "chapters/14-memory-stability.md",
+    "file": "assets/images/fig-14.png",
+    "type": "原创精确图解",
+    "caption": "图 14-1｜原创精确图解。重计算改变中间激活的保存方式；梯度累积把多个微批次合成一次更新。下方除以4只适用于四个等大微批次且各自损失取均值的示例。"
+  },
+  {
+    "id": "15-1",
+    "chapter": "ch15",
+    "source": "chapters/15-graphs-eager.md",
+    "file": "assets/images/fig-15.png",
+    "type": "原创精确图解",
+    "caption": "图 15-1｜原创精确图解。求导图、编译图和设备执行图回答不同问题。它们可以共同参与一个训练步骤，不能把捕获到的设备图直接当作模型求导图。"
+  },
+  {
+    "id": "16-1",
+    "chapter": "ch16",
+    "source": "chapters/16-torch-compile.md",
+    "file": "assets/images/fig-16.png",
+    "type": "原创精确图解",
+    "caption": "图 16-1｜原创精确图解。图断裂划开一次执行的捕获区域；重编译为不满足已有条件的输入准备方案。符号形状可能让不同尺寸复用同一方案，因此形状变化并不必然重编译。"
+  },
+  {
+    "id": "17-1",
+    "chapter": "ch17",
+    "source": "chapters/17-fusion-codegen.md",
+    "file": "assets/images/fig-17.png",
+    "type": "原创精确图解",
+    "caption": "图 17-1｜原创精确图解。对FP32数组的三步逐元素计算，理想化独立读写为24N字节，融合后可为8N字节。这里忽略缓存、标量与其他开销，不等于实际获得3倍加速。"
+  },
+  {
+    "id": "18-1",
+    "chapter": "ch18",
+    "source": "chapters/18-jax-xla-mlir.md",
+    "file": "assets/images/fig-18.png",
+    "type": "原创精确图解",
+    "caption": "图 18-1｜原创精确图解。以JAX为例追踪从函数、追踪变换、StableHLO到XLA编译与设备程序的层次。MLIR是多层表示与基础设施，不是另一个训练框架。"
+  },
+  {
+    "id": "19-1",
+    "chapter": "ch19",
+    "source": "chapters/19-first-kernel.md",
+    "file": "assets/images/kernel-final.png",
+    "type": "AI 教学示意",
+    "caption": "图 19-1｜AI 教学示意。建立参考、检查边界与误差、测量性能构成内核优化的循环。画面中的屏幕曲线是场景插画，不是本书测得的结果。"
+  },
+  {
+    "id": "20-1",
+    "chapter": "ch20",
+    "source": "chapters/20-cuda-hip.md",
+    "file": "assets/images/fig-20.png",
+    "type": "原创精确图解",
+    "caption": "图 20-1｜原创精确图解。地址可访问性、执行先后和内存可见性需要分别建立。普通块内屏障不能充当任意跨块全局屏障；跨流依赖可用事件表达。"
+  },
+  {
+    "id": "21-1",
+    "chapter": "ch21",
+    "source": "chapters/21-triton.md",
+    "file": "assets/images/fig-21.png",
+    "type": "原创精确图解",
+    "caption": "图 21-1｜原创精确图解。同一存储分别以[2,3]/步长[3,1]和[3,2]/步长[1,3]读取。步长以元素为单位，真正计算字节地址还需乘元素大小。"
+  },
+  {
+    "id": "22-1",
+    "chapter": "ch22",
+    "source": "chapters/22-gemm.md",
+    "file": "assets/images/gemm-tiles.png",
+    "type": "AI 教学示意",
+    "caption": "图 22-1｜AI 教学示意。A的行方向区域和B的列方向区域共同生成C的输出块，沿归约维分段累加后再写回。方格是概念块，不按本章代码尺寸逐格绘制。"
+  },
+  {
+    "id": "23-1",
+    "chapter": "ch23",
+    "source": "chapters/23-reductions.md",
+    "file": "assets/images/fig-23.png",
+    "type": "原创精确图解",
+    "caption": "图 23-1｜原创精确图解。整行减去同一个最大值，再指数化并除以总和，保持Softmax比例。这里仅演示有限输入；全行被屏蔽等情况需按接口语义另行处理。"
+  },
+  {
+    "id": "24-1",
+    "chapter": "ch24",
+    "source": "chapters/24-custom-autograd.md",
+    "file": "assets/images/fig-24.png",
+    "type": "原创精确图解",
+    "caption": "图 24-1｜原创精确图解。自定义算子既要检查数值与梯度，也要让类型、形状、存储和系统接口保持一致。opcheck与gradcheck承担不同验证任务。"
+  },
+  {
+    "id": "25-1",
+    "chapter": "ch25",
+    "source": "chapters/25-roofline-profiler.md",
+    "file": "assets/images/fig-25.png",
+    "type": "原创精确图解",
+    "caption": "图 25-1｜原创精确图解。以匹配运算类型的计算上限20 TFLOP/s、带宽1 TB/s作假设。向量加法按FP32两读一写，强度为1/12 FLOP/Byte；标注只是理论带宽屋顶，不是实测。"
+  },
+  {
+    "id": "26-1",
+    "chapter": "ch26",
+    "source": "chapters/26-async-pipelines.md",
+    "file": "assets/images/fig-26.png",
+    "type": "原创精确图解",
+    "caption": "图 26-1｜原创精确图解。四块数据每块搬运3单位、计算5单位，在理想独立资源下串行32单位、重叠23单位。时间轴为教学模型，未计启动、竞争与同步成本。"
+  },
+  {
+    "id": "27-1",
+    "chapter": "ch27",
+    "source": "chapters/27-attention.md",
+    "file": "assets/images/attention-final.png",
+    "type": "AI 教学示意",
+    "caption": "图 27-1｜AI 教学示意。Q与K形成分数，Softmax后与V加权得到输出。下方分块处理仍计算同一数学目标，局部工作区维护行统计量和输出累加器，不保存完整中间矩阵。"
+  },
+  {
+    "id": "28-1",
+    "chapter": "ch28",
+    "source": "chapters/28-modern-dsl.md",
+    "file": "assets/images/fig-28.png",
+    "type": "原创精确图解",
+    "caption": "图 28-1｜原创精确图解。不同语言把线程、布局和数据块的控制权放在不同位置。此表用于理解表达层次，不表示性能排名，也不保证跨平台等速。"
+  },
+  {
+    "id": "29-1",
+    "chapter": "ch29",
+    "source": "chapters/29-collectives.md",
+    "file": "assets/images/cluster.png",
+    "type": "AI 教学示意",
+    "caption": "图 29-1｜AI 教学示意。服务器内部、服务器之间和集群网络属于不同连接尺度。图中连线只表达层级，不能据此推断真实集群的环形、树形或其他拓扑。"
+  },
+  {
+    "id": "30-1",
+    "chapter": "ch30",
+    "source": "chapters/30-fsdp-zero.md",
+    "file": "assets/images/fig-30.png",
+    "type": "原创精确图解",
+    "caption": "图 30-1｜原创精确图解。图中只画参数的常态分片，不代表整个训练峰值。全分片执行模块时通常需要获取所需参数；激活、通信缓冲、预取和版本策略也会影响峰值。"
+  },
+  {
+    "id": "31-1",
+    "chapter": "ch31",
+    "source": "chapters/31-parallelism.md",
+    "file": "assets/images/fig-31.png",
+    "type": "原创精确图解",
+    "caption": "图 31-1｜原创精确图解。数据并行切样本，张量并行切层内维度，流水线并行切连续层，上下文并行切序列。不同切分同时改变数据布局与通信边界。"
+  },
+  {
+    "id": "32-1",
+    "chapter": "ch32",
+    "source": "chapters/32-moe.md",
+    "file": "assets/images/moe-routing.png",
+    "type": "AI 教学示意",
+    "caption": "图 32-1｜AI 教学示意。词元经路由进入所选专家，再按原逻辑位置合并。路由线展示选择性派发；队列长度与设备边界提示负载和跨设备通信，具体Top-k与权重见正文。"
+  },
+  {
+    "id": "33-1",
+    "chapter": "ch33",
+    "source": "chapters/33-reliability.md",
+    "file": "assets/images/fig-33.png",
+    "type": "原创精确图解",
+    "caption": "图 33-1｜原创精确图解。同一训练时刻的完整快照通常超出权重文件：还包括优化器、进度、随机状态、数据位置与运行身份。恢复后需要继续计算并比较，而不只确认文件存在。"
+  },
+  {
+    "id": "34-1",
+    "chapter": "ch34",
+    "source": "chapters/34-training-workloads.md",
+    "file": "assets/images/fig-34.png",
+    "type": "原创精确图解",
+    "caption": "图 34-1｜原创精确图解。预训练、适配、蒸馏、偏好优化和在线RL的数据来源与计算结构不同。此图用于区分工作负载，不把每项训练方法归为单一固定实现。"
+  },
+  {
+    "id": "35-1",
+    "chapter": "ch35",
+    "source": "chapters/35-inference.md",
+    "file": "assets/images/inference-final.png",
+    "type": "AI 教学示意",
+    "caption": "图 35-1｜AI 教学示意。预填充批量处理提示词元并保存键值；逐词步骤读取历史KV，把当前输入位置的KV追加到缓存，同时预测下一个词元。新采样的下一词元尚未被当前步骤计算成KV。"
+  },
+  {
+    "id": "36-1",
+    "chapter": "ch36",
+    "source": "chapters/36-ecosystems.md",
+    "file": "assets/images/fig-36.png",
+    "type": "原创精确图解",
+    "caption": "图 36-1｜原创精确图解。从任务到框架、内核、通信与硬件逐层核对。生态入口只是例子，不表示各软件栈完全等价，也不代表任意型号都支持相同功能。"
+  }
+]

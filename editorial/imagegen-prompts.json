@@ -1,0 +1,162 @@
+{
+  "date": "2026-10-25",
+  "prompts": [
+    {
+      "id": "cover",
+      "prompt": "Use case: scientific-educational. Create the front cover for a Chinese illustrated technical book. Title exactly: GPU 与现代 AI 计算 . Subtitle exactly: 从硬件、训练到算子优化 . Elegant editorial science book cover, portrait 2:3, ivory background, precise refined isometric cutaway illustration of a generic accelerator package with central compute die and several stacked HBM memory packages on an interposer, expanding downwards into one GPU server and an orderly small cluster. The package is a conceptual educational depiction, not a real branded product, no fake specifications. Teal, deep navy and restrained warm orange. Sophisticated material detail and clear negative space, warm paper texture, realistic but gently stylized technical illustration. Title large readable Chinese upper third; subtitle directly below, no other text or lettering, no logo. Strong visual hierarchy, book-quality aesthetics, no neon cyberpunk, no fantasy glowing circuitry."
+    },
+    {
+      "id": "memory-hierarchy",
+      "prompt": "Use case: scientific-educational. Create a polished Chinese textbook conceptual cutaway illustration about GPU memory hierarchy, landscape 3:2, ivory background, muted teal navy warm orange, elegant precise 3D editorial illustration with generous margins. A single generic GPU package as main object: central compute die, nearby stacked HBM modules on common substrate. Magnified callout inside compute die shows ONE multiprocessor containing small register storage and shared SRAM storage; outer compute die region has L2 cache. Clearly show HBM is off die but on package and registers/shared memory are inside compute unit. Use exactly these five large Chinese labels with neat leader lines: 寄存器 , 共享内存 , 二级缓存 , 计算芯片 , 高带宽显存 . Small footer exactly: 概念示意，非按比例 . No arrows implying all accesses traverse every level, no numerical specifications, no brand marks, no other text. This is a teaching conceptual illustration, technical clarity and materials not a circuit blueprint."
+    },
+    {
+      "id": "input-pipeline",
+      "prompt": "Use case: scientific-educational. Chinese textbook educational scene, landscape 3:2, sophisticated ivory/teal/navy/orange editorial isometric illustration. Explain an AI training input pipeline through FOUR distinct tangible stations, arranged in a spacious 2 by 2 layout with broad simple arrows, each station has one large Chinese label. Upper left files and storage trays label 数据读取 . Upper right a CPU workstation with prepared image/text sample tiles label 预处理 . Lower right small host memory buffer blocks adjacent to accelerator label 批次传输 . Lower left an exposed GPU accelerator with tidy repeated matrix blocks label GPU 计算 . Arrows go clockwise upper-left→upper-right→lower-right→lower-left, no return loop. Accurate conceptual interpretation: disk feeds CPU, CPU prepares batches, transfer moves batch, GPU computes. No invented measurements. Footer exactly: 多个批次可流水重叠 . Beautiful physical objects with restrained shading, not a business flowchart and not cute cartoon, readable Chinese large labels, no other text."
+    },
+    {
+      "id": "cluster",
+      "prompt": "Use case: scientific-educational. Create an explanatory illustration for a Chinese technical book on distributed GPU training, landscape 3:2. Sophisticated editorial isometric cutaway, ivory background, teal and deep navy, orange only for connection highlights. Three clear scales shown as three vertically spaced rows suitable for mobile viewing: top row a single server tray containing four generic accelerator modules linked locally, label 服务器内部 . Middle row two complete GPU servers connected through a network switch, label 服务器之间 . Bottom row three racks linked through orderly network switches, label 集群网络 . Each row has physical plausibility and separate clear hierarchy. Conceptual topology, do not imply every training fabric is wired identically. Footer exactly: 拓扑与带宽共同影响通信 . No numerical speeds or fake specifications, no logos, no English except GPU if needed, no extra text. Highly legible illustration, modest detail, no neon or decorative circuits."
+    },
+    {
+      "id": "training-cycle",
+      "prompt": "Use case: scientific-educational. Chinese illustrated book, portrait 2:3, clean elegant ivory paper background, teal/navy/orange editorial technical illustration. Four scenes stacked vertically with generous room and downward arrows, depicting one neural network training iteration without pretending to be a full mathematical graph. Scene1 dataset batch cards enter small matrix processing arrangement label 读取批次 . Scene2 matrices transform through three network layers, small output next to target label 前向与损失 . Scene3 orange gradient signals travel backwards through same network layers label 反向求梯度 . Scene4 parameter matrix blocks are updated using small optimizer mechanism label 更新参数 . Use only these four Chinese labels and footer 教学示意 . No brain icons, no humanoid robots, no fake equations, no invented charts. Abstract physical tensor blocks, visually sophisticated, clear continuity, not cartoon childish."
+    },
+    {
+      "id": "gemm-tiles",
+      "prompt": "Use case: scientific-educational. Create a Chinese educational illustration on tiled matrix multiplication, portrait 2:3, beautiful precise isometric paper and glass matrix blocks, ivory background, teal/navy/orange accents. Three vertical stages: top whole matrices A and B conceptually producing C, label 选取分块 . Middle enlarged one output tile C in orange with matching row-slab of A teal and column-slab of B blue, small multiple depth slices show stepping across shared reduction dimension, label 沿归约维累加 . Bottom output matrix C with one highlighted finished tile and other pale tiles, label 写回结果 . Important: only conceptual arrays, no explicit numeric elements or equations to risk mistakes. The same orange output tile stays same location throughout. Distinct visual identities for input A, input B and output C, small A B C letters are fine. Footer exactly 分块复用数据，减少重复搬运 . No other text, no performance claims. Legible Chinese and broad margins."
+    },
+    {
+      "id": "attention-streaming",
+      "prompt": "Use case: scientific-educational. A sophisticated Chinese book illustration explaining attention data movement, landscape 3:2, two vertically stacked scenes, ivory background teal/navy/orange isometric editorial illustration. Top labeled 显式存储中间矩阵 : query and key blocks at left, large square translucent score matrix in middle sitting beside a physical memory storage tray, result blocks at right; the square is visibly large. Bottom labeled 分块计算并维护统计量 : small row block and small column blocks are processed through compact local workspace, a tiny running statistics register stays beside the output block; no large full score matrix is materialized. Do not draw numerical equations or imply approximation or sparse attention. One footer exactly 教学示意：精确算法也能减少中间读写 . Visually show data movement vs locality, correct conceptual contrast, no speedup numbers, no brand logos, no unrelated text."
+    },
+    {
+      "id": "moe-routing",
+      "prompt": "Use case: scientific-educational. Chinese illustrated technical book on mixture-of-experts, landscape 3:2, ivory background, teal/navy/warm orange professional editorial isometric technical illustration. Show several token cards at upper left entering a small router at top middle. Four separated expert workstations in middle row, uneven token queues (two experts have longer queues). At bottom show weighted outputs regrouped to original token order. Large labels only: 输入词元 , 路由选择 , 专家计算 , 合并输出 . Use sparse selected routes, do not imply every token goes to every expert. Subtle dotted boundaries divide experts into two device groups, with a label 跨设备通信 at boundary. Footer exactly 专家分工带来通信与负载均衡问题 . No fake measurements or detailed numeric routing algorithm. This is a conceptual scene with tangible blocks, not decorative network brain, no neon, no other text."
+    },
+    {
+      "id": "precision",
+      "prompt": "Use case: scientific-educational. Chinese illustrated technical book, portrait 2:3, ivory paper teal/navy/orange refined editorial technical illustration. Three stacked scenes explaining low precision training conceptually, not a numeric format specification. Top a broad smooth range of matrix values compressed into a smaller discrete set of tiles through a scaling dial, label 缩放与量化 . Middle tiny compact operand tiles enter a large matrix compute unit, separate larger accumulation tray stays to the side, label 低精度乘法与累加 . Bottom comparison of two training trajectory ribbons with small error magnifier and safeguard controls, label 误差与收敛验证 . Important: no equations or fake performance graphs, no implication all accumulation is FP32 or every tensor converted; no exact bit counts. Footer exactly 低位宽需要配方与硬件配合 . No other text or brands. Visually pedagogical, professional, concrete and understated."
+    },
+    {
+      "id": "compiler-stack",
+      "prompt": "Use case: scientific-educational. Chinese illustrated science book, portrait 2:3. Elegant ivory/teal/navy/orange editorial isometric illustration of software becoming GPU work, five generous vertical stages connected downwards: a clean short generic Python text page label 模型代码 ; graph of a few connected operation tiles label 计算图 ; compiler workbench where adjacent tiles are fused and rearranged label 编译优化 ; small executable command bundles label 设备内核 ; generic accelerator chip carrying out work label 硬件执行 . Large Chinese labels only, any tiny code should be abstract lines not fake APIs. Show software tools metaphor without gears/robots, restrained realistic materials, clear hierarchy and plenty whitespace. Footer exactly 部分操作也可调用已有算子库 . No other text, no performance numbers, conceptual teaching illustration."
+    },
+    {
+      "id": "kernel-lab",
+      "prompt": "Use case: scientific-educational. Chinese textbook illustration showing the practice of writing GPU kernels, landscape 3:2. Sophisticated editorial isometric composition with three vertically spaced scenes against ivory: first a mathematical reference calculation on a tidy workstation with small input/output tensor blocks, label 建立参考结果 ; second a developer workbench comparing two sets of tensor blocks with subtle checkmark and magnifier, label 检查边界与误差 ; third same generic accelerator with timing instruments and larger output verification tray, label 测量并分析性能 . Avoid fake graphs or scores. Footer exactly 正确性验证贯穿每次优化 . No human characters, no cartoon, no unearned speedup claims, deep navy/teal and orange accents. Large readable Chinese type, technical book quality."
+    },
+    {
+      "id": "inference-kv",
+      "prompt": "Use case: scientific-educational. Chinese technical book illustration about LLM inference. Portrait 2:3, ivory background, teal navy orange editorial physical tensor blocks. Two vertically separated scenes: upper labeled 预填充 : several prompt token cards processed together through a small neural network block, saved blue and orange key/value cache blocks placed in an organized tray beside it. Lower labeled 逐词生成 : one new token card processed through same model block while reading prior cached blocks from growing tray, then produces one new output token card and appends one cache block. Large labels near cache tray exactly KV 缓存 . Footer exactly 缓存减少重复计算，也占用显存 . No claims of zero recomputation or all layers modeled, no mathematical equations, no English except KV. Conceptual educational illustration, no brain icons or robots, clear same visual model in both scenes, generous margins."
+    }
+  ],
+  "selected": [
+    {
+      "id": "cover",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-ac7f0429-ee10-4159-a64a-2ad471f274ef.png",
+      "path": "assets/images/cover.png"
+    },
+    {
+      "id": "memory-hierarchy",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-3f22e875-8d51-41ca-8e61-07b96aafbd3e.png",
+      "path": "assets/images/memory-hierarchy.png"
+    },
+    {
+      "id": "input-pipeline",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-f21ff6c6-3dcb-42e3-aa0d-29c6749df308.png",
+      "path": "assets/images/input-pipeline.png"
+    },
+    {
+      "id": "cluster",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-2ca032ec-9903-491b-a1b7-cb3fe50677f0.png",
+      "path": "assets/images/cluster.png"
+    },
+    {
+      "id": "training-cycle",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-20dc9925-ec66-438d-910e-4294e4223562.png",
+      "path": "assets/images/training-cycle.png"
+    },
+    {
+      "id": "gemm-tiles",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-de841ca5-94b5-4791-a5b0-a450fdc5e3f4.png",
+      "path": "assets/images/gemm-tiles.png"
+    },
+    {
+      "id": "attention-final",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-8bd51b6e-8a09-4c31-a471-f2666339a2e0.png",
+      "path": "assets/images/attention-final.png"
+    },
+    {
+      "id": "moe-routing",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-681ea088-ffc3-4937-aa39-d34b52cabfd7.png",
+      "path": "assets/images/moe-routing.png"
+    },
+    {
+      "id": "precision",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-3c651eaf-3aa3-46d7-93a9-82bc9d508390.png",
+      "path": "assets/images/precision.png"
+    },
+    {
+      "id": "compiler-stack",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-cc7d1383-6f07-4bd7-b25e-f789cfc64975.png",
+      "path": "assets/images/compiler-stack.png"
+    },
+    {
+      "id": "kernel-final",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-b25c1ab1-569e-4dd1-9c93-e974adacfe1c.png",
+      "path": "assets/images/kernel-final.png"
+    },
+    {
+      "id": "inference-final",
+      "type": "image_gen",
+      "tool": "built-in imagegen",
+      "review": "已目检，AI教学示意，不代表真实产品与实测结果",
+      "generated_basename": "exec-a97feb42-2e7e-4a53-a21e-a985353fce68.png",
+      "path": "assets/images/inference-final.png"
+    }
+  ],
+  "revision_notes": {
+    "attention-final": "补齐V与加权汇总，移除错误维度标注；K/V按行块读取。",
+    "kernel-final": "去除自动添加的错误高精度代码；仅保留参考、边界、性能三个概念场景。",
+    "inference-final": "去除句子示例；当前输入词元进入缓存，采样得到的下一词元在下一步处理。"
+  },
+  "tool": "built-in image_gen.imagegen",
+  "final_edit_requirements": {
+    "attention-final": "保留双层对照。Q/K形成分数，Softmax再与V加权得到O。底层Q/K/V行块进入维护统计量和输出累加器的局部工作区；移除维度注释和英文query/key。",
+    "kernel-final": "保留三层场景和标题：建立参考结果、检查边界与误差、测量并分析性能。移除所有额外说明、代码、公式、维度，屏幕仅保留抽象彩线。底部：正确性验证贯穿每次优化。",
+    "inference-final": "移除句子例子，改为抽象词元卡。预填充保存提示KV；逐词步骤读历史键值，模型保存当前输入词元键值到缓存，并预测下一词元。缓存写箭头源自模型，不能源自下一词元。"
+  }
+}

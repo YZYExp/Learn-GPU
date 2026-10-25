@@ -1,0 +1,356 @@
+{
+  "title": "GPU 与现代 AI 计算",
+  "subtitle": "从硬件、训练到算子优化",
+  "language": "zh-CN",
+  "edition": "2026-10",
+  "cover": "assets/images/cover.png",
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "一次训练迭代发生了什么",
+      "order": 1,
+      "source": "chapters/01-training-step.md",
+      "slug": "training-step"
+    },
+    {
+      "id": "ch02",
+      "title": "张量、布局与矩阵运算",
+      "order": 2,
+      "source": "chapters/02-tensor-layout.md",
+      "slug": "tensor-layout"
+    },
+    {
+      "id": "ch03",
+      "title": "自动求导、反向传播与优化器",
+      "order": 3,
+      "source": "chapters/03-autograd-optimizer.md",
+      "slug": "autograd-optimizer"
+    },
+    {
+      "id": "ch04",
+      "title": "从 Python 到 GPU 执行的完整路径",
+      "order": 4,
+      "source": "chapters/04-execution-stack.md",
+      "slug": "execution-stack"
+    },
+    {
+      "id": "ch05",
+      "title": "从图形处理到通用计算",
+      "order": 5,
+      "source": "chapters/05-gpu-evolution.md",
+      "slug": "gpu-evolution"
+    },
+    {
+      "id": "ch06",
+      "title": "线程、Warp 与 SM：GPU 如何组织工作",
+      "order": 6,
+      "source": "chapters/06-execution-model.md",
+      "slug": "execution-model"
+    },
+    {
+      "id": "ch07",
+      "title": "寄存器、共享内存、缓存与 HBM",
+      "order": 7,
+      "source": "chapters/07-memory-hierarchy.md",
+      "slug": "memory-hierarchy"
+    },
+    {
+      "id": "ch08",
+      "title": "矩阵计算单元与数值格式",
+      "order": 8,
+      "source": "chapters/08-matrix-units.md",
+      "slug": "matrix-units"
+    },
+    {
+      "id": "ch09",
+      "title": "封装、Chiplet、CPU 与 GPU 互连",
+      "order": 9,
+      "source": "chapters/09-system-interconnect.md",
+      "slug": "system-interconnect"
+    },
+    {
+      "id": "ch10",
+      "title": "搭建可复现训练环境",
+      "order": 10,
+      "source": "chapters/10-reproducible-environment.md",
+      "slug": "reproducible-environment"
+    },
+    {
+      "id": "ch11",
+      "title": "数据加载与计算流水线",
+      "order": 11,
+      "source": "chapters/11-input-pipeline.md",
+      "slug": "input-pipeline"
+    },
+    {
+      "id": "ch12",
+      "title": "显存账本与 OOM",
+      "order": 12,
+      "source": "chapters/12-memory-budget.md",
+      "slug": "memory-budget"
+    },
+    {
+      "id": "ch13",
+      "title": "混合精度、FP8 与 FP4",
+      "order": 13,
+      "source": "chapters/13-low-precision.md",
+      "slug": "low-precision"
+    },
+    {
+      "id": "ch14",
+      "title": "重计算、梯度累积与训练稳定性",
+      "order": 14,
+      "source": "chapters/14-memory-stability.md",
+      "slug": "memory-stability"
+    },
+    {
+      "id": "ch15",
+      "title": "Eager、计算图与动态图",
+      "order": 15,
+      "source": "chapters/15-graphs-eager.md",
+      "slug": "graphs-eager"
+    },
+    {
+      "id": "ch16",
+      "title": "torch.compile、图断裂与动态形状",
+      "order": 16,
+      "source": "chapters/16-torch-compile.md",
+      "slug": "torch-compile"
+    },
+    {
+      "id": "ch17",
+      "title": "算子融合、布局变换与代码生成",
+      "order": 17,
+      "source": "chapters/17-fusion-codegen.md",
+      "slug": "fusion-codegen"
+    },
+    {
+      "id": "ch18",
+      "title": "JAX、XLA、MLIR 与编译路线",
+      "order": 18,
+      "source": "chapters/18-jax-xla-mlir.md",
+      "slug": "jax-xla-mlir"
+    },
+    {
+      "id": "ch19",
+      "title": "第一个 Kernel 与可靠计时",
+      "order": 19,
+      "source": "chapters/19-first-kernel.md",
+      "slug": "first-kernel"
+    },
+    {
+      "id": "ch20",
+      "title": "CUDA 与 HIP 的执行和内存模型",
+      "order": 20,
+      "source": "chapters/20-cuda-hip.md",
+      "slug": "cuda-hip"
+    },
+    {
+      "id": "ch21",
+      "title": "Triton 的块级编程",
+      "order": 21,
+      "source": "chapters/21-triton.md",
+      "slug": "triton"
+    },
+    {
+      "id": "ch22",
+      "title": "GEMM：从朴素实现到分块计算",
+      "order": 22,
+      "source": "chapters/22-gemm.md",
+      "slug": "gemm"
+    },
+    {
+      "id": "ch23",
+      "title": "Reduction、Softmax 与 RMSNorm",
+      "order": 23,
+      "source": "chapters/23-reductions.md",
+      "slug": "reductions"
+    },
+    {
+      "id": "ch24",
+      "title": "融合算子、反向算子与框架集成",
+      "order": 24,
+      "source": "chapters/24-custom-autograd.md",
+      "slug": "custom-autograd"
+    },
+    {
+      "id": "ch25",
+      "title": "Roofline、Profiler 与瓶颈定位",
+      "order": 25,
+      "source": "chapters/25-roofline-profiler.md",
+      "slug": "roofline-profiler"
+    },
+    {
+      "id": "ch26",
+      "title": "异步搬运、流水线与 Warp Specialization",
+      "order": 26,
+      "source": "chapters/26-async-pipelines.md",
+      "slug": "async-pipelines"
+    },
+    {
+      "id": "ch27",
+      "title": "Attention 与 FlashAttention",
+      "order": 27,
+      "source": "chapters/27-attention.md",
+      "slug": "attention"
+    },
+    {
+      "id": "ch28",
+      "title": "现代 Kernel DSL、自动调优与 AI 辅助优化",
+      "order": 28,
+      "source": "chapters/28-modern-dsl.md",
+      "slug": "modern-dsl"
+    },
+    {
+      "id": "ch29",
+      "title": "集合通信与网络拓扑",
+      "order": 29,
+      "source": "chapters/29-collectives.md",
+      "slug": "collectives"
+    },
+    {
+      "id": "ch30",
+      "title": "DDP、ZeRO 与 FSDP",
+      "order": 30,
+      "source": "chapters/30-fsdp-zero.md",
+      "slug": "fsdp-zero"
+    },
+    {
+      "id": "ch31",
+      "title": "张量、流水线与上下文并行",
+      "order": 31,
+      "source": "chapters/31-parallelism.md",
+      "slug": "parallelism"
+    },
+    {
+      "id": "ch32",
+      "title": "MoE 与专家并行",
+      "order": 32,
+      "source": "chapters/32-moe.md",
+      "slug": "moe"
+    },
+    {
+      "id": "ch33",
+      "title": "训练工程、检查点与故障恢复",
+      "order": 33,
+      "source": "chapters/33-reliability.md",
+      "slug": "reliability"
+    },
+    {
+      "id": "ch34",
+      "title": "预训练、微调、蒸馏与强化学习后训练",
+      "order": 34,
+      "source": "chapters/34-training-workloads.md",
+      "slug": "training-workloads"
+    },
+    {
+      "id": "ch35",
+      "title": "推理中的 Prefill、Decode 与 KV Cache",
+      "order": 35,
+      "source": "chapters/35-inference.md",
+      "slug": "inference"
+    },
+    {
+      "id": "ch36",
+      "title": "GPU 与专用加速器的系统比较",
+      "order": 36,
+      "source": "chapters/36-ecosystems.md",
+      "slug": "ecosystems"
+    }
+  ],
+  "appendices": [
+    {
+      "id": "lab",
+      "title": "贯穿实验：训练一个小型因果 Transformer",
+      "source": "appendices/transformer-lab.md"
+    },
+    {
+      "id": "experiments",
+      "title": "实验索引与复现方法",
+      "source": "appendices/lab-index.md"
+    },
+    {
+      "id": "glossary",
+      "title": "术语：把计算层次分清",
+      "source": "appendices/glossary.md"
+    }
+  ],
+  "parts": [
+    {
+      "title": "从一次训练看整个系统",
+      "chapters": [
+        "ch01",
+        "ch02",
+        "ch03",
+        "ch04"
+      ]
+    },
+    {
+      "title": "GPU 内部与整机硬件",
+      "chapters": [
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch08",
+        "ch09"
+      ]
+    },
+    {
+      "title": "把单卡训练做好",
+      "chapters": [
+        "ch10",
+        "ch11",
+        "ch12",
+        "ch13",
+        "ch14"
+      ]
+    },
+    {
+      "title": "从框架进入编译器",
+      "chapters": [
+        "ch15",
+        "ch16",
+        "ch17",
+        "ch18"
+      ]
+    },
+    {
+      "title": "亲手编写 GPU 算子",
+      "chapters": [
+        "ch19",
+        "ch20",
+        "ch21",
+        "ch22",
+        "ch23",
+        "ch24"
+      ]
+    },
+    {
+      "title": "现代算子与性能工程",
+      "chapters": [
+        "ch25",
+        "ch26",
+        "ch27",
+        "ch28"
+      ]
+    },
+    {
+      "title": "从单卡到训练集群",
+      "chapters": [
+        "ch29",
+        "ch30",
+        "ch31",
+        "ch32",
+        "ch33"
+      ]
+    },
+    {
+      "title": "现代工作负载与生态选择",
+      "chapters": [
+        "ch34",
+        "ch35",
+        "ch36"
+      ]
+    }
+  ]
+}

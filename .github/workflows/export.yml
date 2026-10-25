@@ -1,0 +1,45 @@
+name: Export reading edition
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'chapters/**'
+      - 'appendices/**'
+      - 'assets/images/**'
+      - 'book.json'
+      - 'scripts/build.py'
+      - 'requirements-book.txt'
+      - '.github/workflows/export.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: export-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  epub:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-book.txt
+      - run: python -m pip install --only-binary=:all: -r requirements-book.txt
+      - name: Validate and export complete book
+        run: python scripts/build.py
+      - uses: actions/upload-artifact@v7
+        with:
+          name: GPU-reading-edition-${{ github.sha }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            build/GPU-Modern-Computing.epub
+            build/GPU-Modern-Computing.md
+            build/validation.json
